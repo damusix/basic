@@ -1,17 +1,17 @@
-'use strict';
-
-const Basic = require('..');
-const Boom = require('@hapi/boom');
-const Code = require('@hapi/code');
-const Hapi = require('@hapi/hapi');
-const Lab = require('@hapi/lab');
+import * as Basic from '../lib/index.js';
+import * as Boom from '@hapi/boom';
+import * as Code from '@hapi/code';
+import * as Hapi from '@hapi/hapi';
+import * as Lab from '@hapi/lab';
 
 
 const internals = {};
 
 
-const { it, describe } = exports.lab = Lab.script();
+const lab = Lab.script();
+const { it, describe } = lab;
 const expect = Code.expect;
+export { lab };
 
 
 describe('Basic authentication', () => {

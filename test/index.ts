@@ -1,6 +1,6 @@
 // from https://github.com/hapijs/hapi-auth-basic#hapi-auth-basic
 
-import * as Basic from '..';
+import * as Basic from '../lib/index.js';
 import { Server } from '@hapi/hapi';
 import { types } from '@hapi/lab';
 

@@ -1,11 +1,11 @@
-'use strict';
-
-const Code = require('@hapi/code');
-const Lab = require('@hapi/lab');
+import * as Code from '@hapi/code';
+import * as Lab from '@hapi/lab';
 
 
-const { before, describe, it } = exports.lab = Lab.script();
+const lab = Lab.script();
+const { before, describe, it } = lab;
 const expect = Code.expect;
+export { lab };
 
 
 describe('import()', () => {
@@ -20,7 +20,6 @@ describe('import()', () => {
     it('exposes all methods and classes as named imports', () => {
 
         expect(Object.keys(Basic)).to.equal([
-            'default',
             'plugin'
         ]);
     });
