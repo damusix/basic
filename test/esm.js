@@ -1,26 +1,9 @@
-import * as Code from '@hapi/code';
-import * as Lab from '@hapi/lab';
-
-
-const lab = Lab.script();
-const { before, describe, it } = lab;
-const expect = Code.expect;
-export { lab };
-
+import { describe, expect, it } from 'vitest';
 
 describe('import()', () => {
+    it('exposes all methods and classes as named imports', async () => {
+        const Basic = await import('../src/index.js');
 
-    let Basic;
-
-    before(async () => {
-
-        Basic = await import('../lib/index.js');
-    });
-
-    it('exposes all methods and classes as named imports', () => {
-
-        expect(Object.keys(Basic)).to.equal([
-            'plugin'
-        ]);
+        expect(Object.keys(Basic)).toStrictEqual(['plugin']);
     });
 });
